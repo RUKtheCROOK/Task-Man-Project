@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script
+      src="https://kit.fontawesome.com/5f81d5fe89.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Task Manager Project</title>
+  </head>
+  <body>
+    <nav>
+      <div class="container text-center">
+        <h1>
+          <i class="fa-solid fa-circle-exclamation"></i>This is an H1<i
+            class="fa-solid fa-ban"
+          ></i>
+        </h1>
+      </div>
+    </nav>
+    <main>
+      <div class="container">
+        <div class="flex-container">
+          <section class="list-display">
+            <div class="container text-center">
+              <br />
+              <button id="btn-list" class="btn btn-dark">Toggle</button>
+            </div>
+          </section>
+          <section class="task-form">
+            <div id="task-form" class="container">
+              <br />
+              <div class="mb-3 text-center">
+                <h2 id="I" class="hide">
+                  <i id="important" class="fa-solid fa-circle-exclamation"></i>
+                </h2>
+                <h2 id="nI" class="">
+                  <i id="nImportant" class="fa-solid fa-ban"></i>
+                </h2>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Title:</label
+                ><input
+                  type="text"
+                  id="txt-title"
+                  class="form-control"
+                  placeholder="*Required Field*"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Description:</label>
+                <textarea
+                  type="text"
+                  id="txtA-description"
+                  rows="1"
+                  class="form-control"
+                  placeholder="*Required Field*"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Due Date:</label
+                ><input
+                  type="datetime-local"
+                  id="txt-dueDate"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Category:</label
+                ><select id="sel-category" class="form-control">
+                  <option value="family">Family</option>
+                  <option value="personal">Personal</option>
+                  <option value="work">Work</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Contact:</label
+                ><input
+                  type="tel"
+                  id="tel-contact"
+                  class="form-control"
+                  placeholder="303-455-3465"
+                  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Status:</label>
+                <select id="sel-status" class="form-control">
+                  <option value="cancelled">Cancelled</option>
+                  <option value="completed">Completed</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="ready">Ready</option>
+                </select>
+              </div>
+              <div class="container text-center">
+                <button class="btn btn-dark" id="btn">Submit</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>

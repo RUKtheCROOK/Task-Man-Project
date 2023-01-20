@@ -1,0 +1,63 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../styles/node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "../styles/node_modules/bootstrap/scss/variables";
+@import "../styles/node_modules/bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+// 5. Include remainder of required parts
+@import "../styles/node_modules/bootstrap/scss/bootstrap";
+// 8. Add additional custom code here
+
+nav h1 {
+  color: red;
+  background-color: bisque;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+i {
+  font-size: 50px;
+  cursor: pointer;
+}
+.flex-container {
+  display: flex;
+  height: 900px;
+  width: 100%;
+  justify-content: space-between;
+}
+.task-form {
+  width: 69%;
+  height: 100%;
+  background-color: aquamarine;
+  border-radius: 10px;
+}
+
+.list-display {
+  width: 29%;
+  height: 100%;
+  background-color: aqua;
+  border-radius: 10px;
+}
+.hide {
+  display: none;
+}
+
+#important {
+  color: rgb(0, 255, 34);
+  background-color: rgb(39, 92, 39);
+  border-radius: 50%;
+  padding: 3px;
+}
+
+#nImportant {
+  color: red;
+  background-color: rgb(245, 205, 205);
+  border-radius: 50%;
+  padding: 3px;
+}
