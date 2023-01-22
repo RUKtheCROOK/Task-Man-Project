@@ -27,18 +27,19 @@
           <section class="list-display">
             <div class="container text-center">
               <br />
-              <button id="btn-list" class="btn btn-dark">Toggle</button>
+              <button id="btn-list" class="btn btn-dark">Toggle form</button>
             </div>
+            <div id="tasks" class="container text-center"></div>
           </section>
-          <section class="task-form">
-            <div id="task-form" class="container">
+          <section id="task-form" class="task-form">
+            <div class="container">
               <br />
               <div class="mb-3 text-center">
                 <h2 id="I" class="hide">
-                  <i id="important" class="fa-solid fa-circle-exclamation"></i>
+                  <i class="important fa-solid fa-circle-exclamation"></i>
                 </h2>
                 <h2 id="nI" class="">
-                  <i id="nImportant" class="fa-solid fa-ban"></i>
+                  <i class="nImportant fa-solid fa-ban"></i>
                 </h2>
               </div>
               <div class="mb-3">
@@ -54,7 +55,7 @@
                 <label class="form-label">Description:</label>
                 <textarea
                   type="text"
-                  id="txtA-description"
+                  id="txt-desc"
                   rows="1"
                   class="form-control"
                   placeholder="*Required Field*"
@@ -64,7 +65,7 @@
                 <label class="form-label">Due Date:</label
                 ><input
                   type="datetime-local"
-                  id="txt-dueDate"
+                  id="sel-due"
                   class="form-control"
                 />
               </div>
@@ -96,7 +97,7 @@
                 </select>
               </div>
               <div class="container text-center">
-                <button class="btn btn-dark" id="btn">Submit</button>
+                <button class="btn btn-dark" id="btn-submit">Submit</button>
               </div>
             </div>
           </section>
@@ -104,6 +105,7 @@
       </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="scripts/task.js"></script>
     <script src="scripts/index.js"></script>
   </body>
 </html>

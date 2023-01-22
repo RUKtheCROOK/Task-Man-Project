@@ -11853,9 +11853,24 @@ i {
 
 .flex-container {
   display: flex;
-  height: 900px;
+  min-height: 900px;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.flex-container-1 {
+  display: flex;
+  height: 100%;
   width: 100%;
   justify-content: space-between;
+  background-color: azure;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: solid 2px lightgray;
 }
 
 .task-form {
@@ -11863,10 +11878,11 @@ i {
   height: 100%;
   background-color: aquamarine;
   border-radius: 10px;
+  margin-left: 10px;
 }
 
 .list-display {
-  width: 29%;
+  width: 100%;
   height: 100%;
   background-color: aqua;
   border-radius: 10px;
@@ -11876,16 +11892,48 @@ i {
   display: none;
 }
 
-#important {
+.important {
   color: rgb(0, 255, 34);
   background-color: rgb(39, 92, 39);
   border-radius: 50%;
   padding: 3px;
 }
 
-#nImportant {
+.nImportant {
   color: red;
   background-color: rgb(245, 205, 205);
   border-radius: 50%;
   padding: 3px;
+}
+
+#btn-list {
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 10px;
+  padding: 10px;
+  background-color: rgba(255, 182, 193, 0.466);
+  border-radius: 10px;
+}
+
+.flex-container-1 label {
+  color: #03045e;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: white;
+  border-radius: 10px;
+  border: solid #03045e 2px;
+  padding: 2px;
+  margin: 5px;
+}
+
+.task-form label {
+  color: #03045e;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: white;
+  border-radius: 10px;
+  border: solid #03045e 2px;
+  padding: 2px;
 }/*# sourceMappingURL=main.css.map */
