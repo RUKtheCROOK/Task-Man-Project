@@ -20,6 +20,16 @@ function toggleForm() {
   //   $("#task-form").toggleClass(hide);
   $("#task-form").toggle();
 }
+// To clear the form
+function clearForm() {
+  console.log("clearForm called");
+  $("#txt-title").val("");
+  $("#txt-desc").val("");
+  $("#sel-due").val("");
+  $("#sel-category").val("");
+  $("#tel-contact").val("");
+  $("#sel-status").val("");
+}
 // To submit the form
 function submit() {
   console.log("submit called");
@@ -32,6 +42,7 @@ function submit() {
 
   let task = new Task(important, title, desc, due, category, contact, status);
   displayTask(task);
+  clearForm();
 }
 
 function displayTask(task) {
