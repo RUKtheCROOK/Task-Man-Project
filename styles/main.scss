@@ -84,21 +84,40 @@ p {
   border-radius: 10px;
 }
 .flex-container-1 label {
-  color: #03045e;
+  color: black;
   font-size: 20px;
   font-weight: 500;
   background-color: white;
   border-radius: 10px;
-  border: solid #03045e 2px;
+  border: solid black 2px;
   padding: 2px;
   margin: 5px;
 }
 .task-form label {
-  color: #03045e;
+  color: black;
   font-size: 20px;
   font-weight: 500;
   background-color: white;
   border-radius: 10px;
-  border: solid #03045e 2px;
+  border: solid black 2px;
   padding: 2px;
+}
+.imptsk {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.title {
+  font-size: 30px;
+  font-weight: 800;
+  margin: 10px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+body {
+  background-color: #615e5e;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/80/Elegant_Background-19.jpg);
+  background-size: cover;
+}
+#btn-submit {
+  margin-bottom: 20px;
 }

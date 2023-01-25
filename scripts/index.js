@@ -16,7 +16,7 @@ function makeImportant() {
 // To hide the form
 function toggleForm() {
   console.log("toggleForm called");
-  let hide = "hide";
+  // let hide = "hide";
   //   $("#task-form").toggleClass(hide);
   $("#task-form").toggle();
 }
@@ -41,45 +41,80 @@ function submit() {
   let status = $("#sel-status").val();
 
   let task = new Task(important, title, desc, due, category, contact, status);
-  displayTask(task);
-  clearForm();
+
+  $.ajax({
+    type: "POST",
+    url: "https://fsdiapi.azurewebsites.net/api/tasks/",
+    data: JSON.stringify(task),
+    contentType: "application/json",
+    success: function (res) {
+      console.log(`${res}`);
+      displayTask(task);
+      clearForm();
+    },
+    error: function (error) {
+      console.log(`${error}`);
+      alert("there has been an error");
+    },
+  });
 }
 
 function displayTask(task) {
-  // let table = `
-  // <table>
-  // <thead>
-  //   <tr>
-  //     <th class="tablenumber">Pet #</th>
-  //     <th class="tablename">Name</th>
-  //     <th class="tableage">Age</th>
-  //     <th class="tablegender">Gender</th>
-  //     <th class="tablepayment">Payment</th>
-  //     <th>Delete</th>
-  //   </tr>
-  //     </thead><tbody id="tableBody"></tbody></table>`;
   let display = `
   <div class="container flex-container-1">
-      <div>${task.important}</div>
+      <div class="imptsk">${task.important}</div>
     <div>
-    <h3><u>${task.title}</u></h3>
+    <h3 class="title"><u>${task.title}</u></h3>
     <p id="description">${task.desc}</p>
     </div>
-    <div><label>${task.due}</label>
+    <div class="imptsk"><label>${task.due}</label>
     <label>${task.status}</label>
     </div>
-    <div><label>${task.category}</label>
+    <div class="imptsk"><label>${task.category}</label>
     <label>${task.contact}</label>
     </div>
     </div>
   `;
   $("#tasks").append(display);
-  // $("#tasks").append(table);
-  // $("#tableBody").append(display);
+}
+
+function testRequest() {
+  console.log("testRequest called");
+  $.ajax({
+    type: "GET",
+    url: "https://fsdiapi.azurewebsites.net/",
+    success: function (res) {
+      console.log(`${res}`);
+    },
+    error: function (error) {
+      console.log(`${error}`);
+    },
+  });
+}
+
+function taskLoad() {
+  $.ajax({
+    type: "GET",
+    url: "https://fsdiapi.azurewebsites.net/api/tasks",
+    success: function (res) {
+      let tasks = JSON.parse(res);
+      for (let i = 0; i < tasks.length; i++) {
+        let task = tasks[i];
+        if (task.name == "John") {
+          displayTask(task);
+        }
+      }
+    },
+    error: function (error) {
+      console.log(`${error}`);
+    },
+  });
 }
 // Here is the Init function that will be called when the page loads
 function init() {
   console.log("index.js loaded");
+
+  taskLoad();
 
   //   Events
   $("#nI").click(makeImportant);
